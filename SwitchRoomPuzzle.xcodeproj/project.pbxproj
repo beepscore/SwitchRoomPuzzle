@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DE6F8A841F2D249B00D84542 /* Prisoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F8A831F2D249B00D84542 /* Prisoner.swift */; };
 		DE6F8A861F2D291600D84542 /* PrisonerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F8A851F2D291600D84542 /* PrisonerTests.swift */; };
+		DE6F8A881F2D2CE600D84542 /* PrisonerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F8A871F2D2CE600D84542 /* PrisonerController.swift */; };
+		DE6F8A8A1F2D2D9100D84542 /* PrisonerControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F8A891F2D2D9100D84542 /* PrisonerControllerTests.swift */; };
 		DEDC55381F2D233D006A8F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC55371F2D233D006A8F91 /* AppDelegate.swift */; };
 		DEDC553A1F2D233D006A8F91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC55391F2D233D006A8F91 /* ViewController.swift */; };
 		DEDC553D1F2D233D006A8F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDC553B1F2D233D006A8F91 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		DE6F8A821F2D241800D84542 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE6F8A831F2D249B00D84542 /* Prisoner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prisoner.swift; sourceTree = "<group>"; };
 		DE6F8A851F2D291600D84542 /* PrisonerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrisonerTests.swift; sourceTree = "<group>"; };
+		DE6F8A871F2D2CE600D84542 /* PrisonerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrisonerController.swift; sourceTree = "<group>"; };
+		DE6F8A891F2D2D9100D84542 /* PrisonerControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrisonerControllerTests.swift; sourceTree = "<group>"; };
 		DEDC55341F2D233D006A8F91 /* SwitchRoomPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitchRoomPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDC55371F2D233D006A8F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEDC55391F2D233D006A8F91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				DEDC55401F2D233D006A8F91 /* LaunchScreen.storyboard */,
 				DEDC553B1F2D233D006A8F91 /* Main.storyboard */,
 				DE6F8A831F2D249B00D84542 /* Prisoner.swift */,
+				DE6F8A871F2D2CE600D84542 /* PrisonerController.swift */,
 				DEDC55391F2D233D006A8F91 /* ViewController.swift */,
 			);
 			path = SwitchRoomPuzzle;
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDC554E1F2D233D006A8F91 /* Info.plist */,
+				DE6F8A891F2D2D9100D84542 /* PrisonerControllerTests.swift */,
 				DE6F8A851F2D291600D84542 /* PrisonerTests.swift */,
 			);
 			path = SwitchRoomPuzzleTests;
@@ -207,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDC553A1F2D233D006A8F91 /* ViewController.swift in Sources */,
+				DE6F8A881F2D2CE600D84542 /* PrisonerController.swift in Sources */,
 				DE6F8A841F2D249B00D84542 /* Prisoner.swift in Sources */,
 				DEDC55381F2D233D006A8F91 /* AppDelegate.swift in Sources */,
 			);
@@ -217,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6F8A861F2D291600D84542 /* PrisonerTests.swift in Sources */,
+				DE6F8A8A1F2D2D9100D84542 /* PrisonerControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
