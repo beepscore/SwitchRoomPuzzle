@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE6F8A841F2D249B00D84542 /* Prisoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F8A831F2D249B00D84542 /* Prisoner.swift */; };
+		DE6F8A861F2D291600D84542 /* PrisonerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6F8A851F2D291600D84542 /* PrisonerTests.swift */; };
 		DEDC55381F2D233D006A8F91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC55371F2D233D006A8F91 /* AppDelegate.swift */; };
 		DEDC553A1F2D233D006A8F91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC55391F2D233D006A8F91 /* ViewController.swift */; };
 		DEDC553D1F2D233D006A8F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDC553B1F2D233D006A8F91 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		DE6F8A821F2D241800D84542 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE6F8A831F2D249B00D84542 /* Prisoner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prisoner.swift; sourceTree = "<group>"; };
+		DE6F8A851F2D291600D84542 /* PrisonerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrisonerTests.swift; sourceTree = "<group>"; };
 		DEDC55341F2D233D006A8F91 /* SwitchRoomPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitchRoomPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDC55371F2D233D006A8F91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEDC55391F2D233D006A8F91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,8 +97,9 @@
 		DEDC554B1F2D233D006A8F91 /* SwitchRoomPuzzleTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEDC554C1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift */,
 				DEDC554E1F2D233D006A8F91 /* Info.plist */,
+				DE6F8A851F2D291600D84542 /* PrisonerTests.swift */,
+				DEDC554C1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift */,
 			);
 			path = SwitchRoomPuzzleTests;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDC554D1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift in Sources */,
+				DE6F8A861F2D291600D84542 /* PrisonerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
