@@ -14,7 +14,6 @@
 		DEDC553D1F2D233D006A8F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDC553B1F2D233D006A8F91 /* Main.storyboard */; };
 		DEDC553F1F2D233D006A8F91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDC553E1F2D233D006A8F91 /* Assets.xcassets */; };
 		DEDC55421F2D233D006A8F91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDC55401F2D233D006A8F91 /* LaunchScreen.storyboard */; };
-		DEDC554D1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC554C1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		DEDC55411F2D233D006A8F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEDC55431F2D233D006A8F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDC55481F2D233D006A8F91 /* SwitchRoomPuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitchRoomPuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEDC554C1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchRoomPuzzleTests.swift; sourceTree = "<group>"; };
 		DEDC554E1F2D233D006A8F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +97,6 @@
 			children = (
 				DEDC554E1F2D233D006A8F91 /* Info.plist */,
 				DE6F8A851F2D291600D84542 /* PrisonerTests.swift */,
-				DEDC554C1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift */,
 			);
 			path = SwitchRoomPuzzleTests;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDC554D1F2D233D006A8F91 /* SwitchRoomPuzzleTests.swift in Sources */,
 				DE6F8A861F2D291600D84542 /* PrisonerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
