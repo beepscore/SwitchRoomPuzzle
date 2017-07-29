@@ -1,5 +1,5 @@
 //
-//  PrisonerController.swift
+//  PrisonController.swift
 //  SwitchRoomPuzzle
 //
 //  Created by Steve Baker on 7/29/17.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-class PrisonerController: NSObject {
+class PrisonController: NSObject {
+
+    let room = Room()
 
     let prisoners: [Prisoner] = [Prisoner()]
 
