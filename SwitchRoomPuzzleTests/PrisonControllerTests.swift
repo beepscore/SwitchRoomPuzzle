@@ -26,4 +26,9 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertEqual(prisonController.prisoners.count, 1)
     }
 
+    func testVisitRoom() {
+        let prisonController = PrisonController()
+        prisonController.prisoners.first?.visitRoom(prisonController.room)
+    }
+
 }
