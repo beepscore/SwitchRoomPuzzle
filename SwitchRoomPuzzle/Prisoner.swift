@@ -14,7 +14,7 @@ class Prisoner: NSObject {
 
     var didVisitRoomAtLeastOnce = false
 
-    /// Method has side effects, may change state of prisoner and roomSwitch.
+    /// Method has side effects, may change state of prisoner and room.roomSwitch.
     /// - Returns: true if each prisoner has visited at least once
     /// (including current visit, before self possibly set roomSwitch),
     /// return false if each prisoner hasn't visited at least once or don't know.
