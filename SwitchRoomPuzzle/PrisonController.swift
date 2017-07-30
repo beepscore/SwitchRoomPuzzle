@@ -10,9 +10,8 @@ import Foundation
 
 class PrisonController: NSObject {
 
-    let room = Room()
-
-    let prisoners: [Prisoner] = [Prisoner()]
+    var room: Room?
+    var prisoners: [Prisoner]?
 
     enum PrisonersState: Int {
         // prisoner didn't guess true
@@ -23,15 +22,23 @@ class PrisonController: NSObject {
         case won
     }
 
+    init(room: Room?, prisoners: [Prisoner]?) {
+        super.init()
+        self.room = room
+        self.prisoners = prisoners
+    }
+
     /// - PrisonController uses this to check if a Prisoner "guess" is correct.
     /// - Returns: true if each prisoner has visited at least once
     func didAllPrisonersVisitAtLeastOnce() -> Bool {
+        guard let prisoners = prisoners else { return false }
         return prisoners.filter({ $0.didVisitRoomAtLeastOnce == false }) == []
     }
 
     /// - Parameter prisoner: prisoner to visit room
     /// - Returns: PrisonersState
     func visitRoom(prisoner: Prisoner) -> PrisonersState {
+        guard let room = room else { return PrisonersState.won }
         let prisonerGuess = prisoner.visitRoomAndReport(room)
 
         if prisonerGuess {
