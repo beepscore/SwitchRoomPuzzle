@@ -38,8 +38,9 @@ class PrisonController: NSObject {
     /// - Parameter prisoner: prisoner to visit room
     /// - Returns: PrisonersState
     func visitRoom(prisoner: Prisoner) -> PrisonersState {
-        guard let room = room else { return PrisonersState.won }
-        let prisonerGuess = prisoner.visitRoomAndReport(room)
+        if room == nil { return PrisonersState.won }
+        
+        let prisonerGuess = prisoner.visitRoomAndReport(room!)
 
         if prisonerGuess {
 
