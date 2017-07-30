@@ -40,8 +40,9 @@ class PrisonController: NSObject {
     func visitRoom(prisoner: Prisoner) -> PrisonersState {
         if room == nil { return PrisonersState.won }
         
-        let prisonerGuess = prisoner.visitRoomAndReport(room!)
+        prisoner.visitRoom(room!)
 
+        let prisonerGuess = prisoner.didAllPrisonersVisit
         if prisonerGuess {
 
             if didAllPrisonersVisitAtLeastOnce() {

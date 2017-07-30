@@ -13,20 +13,23 @@ class Prisoner: NSObject {
     // TODO: could store all previous visits to the switch room
 
     var didVisitRoomAtLeastOnce = false
+    /// roomSwitch state on previous visit
+    var roomSwitchPrevious = false
+    /// roomSwitch state upon entering room this visit
+    var roomSwitchUponEntering = false
+
+    var didAllPrisonersVisit = false
 
     /// Method has side effects, may change state of prisoner and room.roomSwitch.
-    /// - Returns: true if each prisoner has visited at least once
-    /// (including current visit, before self possibly set roomSwitch),
-    /// return false if each prisoner hasn't visited at least once or don't know.
-    func visitRoomAndReport(_ room: Room) -> Bool {
-        
-        let roomSwitchUponEntering = room.roomSwitch
+    func visitRoom(_ room: Room) {
+        enterRoom(room)
+        didAllPrisonersVisit = didEachPrisonerVisitAtLeastOnce(room)
+        leaveRoom(room)
+    }
+
+    func enterRoom(_ room: Room) {
+        roomSwitchUponEntering = room.roomSwitch
         room.roomSwitch = shouldSetSwitch(roomSwitchUponEntering: roomSwitchUponEntering)
-
-        didVisitRoomAtLeastOnce = true
-
-        // self might have set roomSwitch, so use roomSwitchUponEntering
-        return didEachPrisonerVisitAtLeastOnce(roomSwitchUponEntering: roomSwitchUponEntering)
     }
 
     /// This method may use prisoner state to calculate return value.
@@ -35,10 +38,16 @@ class Prisoner: NSObject {
     /// - Returns: true if each prisoner has visited at least once
     /// (including current visit, before self possibly set switch),
     /// return false if each prisoner hasn't visited at least once or don't know.
-    func didEachPrisonerVisitAtLeastOnce(roomSwitchUponEntering: Bool) -> Bool {
+    private func didEachPrisonerVisitAtLeastOnce(_ room: Room) -> Bool {
 
         // TODO: improve implementation, e.g. handle cases with more than one prisoner
-        return didVisitRoomAtLeastOnce
+        return (!didVisitRoomAtLeastOnce && roomSwitchUponEntering)
+            || room.roomSwitch
+    }
+
+    func leaveRoom(_ room: Room) {
+        roomSwitchPrevious = room.roomSwitch
+        didVisitRoomAtLeastOnce = true
     }
 
     /// This method may recommend to turn switch on, or off, or toggle, or don't change.

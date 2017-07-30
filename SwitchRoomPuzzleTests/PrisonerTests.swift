@@ -17,11 +17,18 @@ class PrisonerTests: XCTestCase {
         XCTAssertFalse(prisoner.didVisitRoomAtLeastOnce)
     }
 
-    func testVisitRoomAndReport() {
+    func testVisitRoom() {
         let prisoner = Prisoner()
         XCTAssertFalse(prisoner.didVisitRoomAtLeastOnce)
-        XCTAssertTrue(prisoner.visitRoomAndReport(Room()))
+        prisoner.visitRoom(Room())
         XCTAssertTrue(prisoner.didVisitRoomAtLeastOnce)
+    }
+
+    func testDidAllPrisonersVisit() {
+        let prisoner = Prisoner()
+        XCTAssertFalse(prisoner.didAllPrisonersVisit)
+        prisoner.visitRoom(Room())
+        XCTAssertTrue(prisoner.didAllPrisonersVisit)
     }
 
 }

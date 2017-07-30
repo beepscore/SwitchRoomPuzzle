@@ -33,10 +33,21 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertEqual(prisonController.prisoners?.count, 1)
     }
 
-    func testVisitRoom() {
+    // failed
+    func testVisitRoomOnePrisoner() {
         let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
         let prisoner = prisonController.prisoners?.first
         XCTAssertEqual(prisonController.visitRoom(prisoner: prisoner!), .won)
+    }
+
+    func testVisitRoomTwoPrisoners() {
+        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner(), Prisoner()])
+        let prisoner0 = prisonController.prisoners?[0]
+        let prisoner1 = prisonController.prisoners?[1]
+
+        // TODO: Fix failing test
+        XCTAssertEqual(prisonController.visitRoom(prisoner: prisoner0!), .keepPlaying)
+        XCTAssertEqual(prisonController.visitRoom(prisoner: prisoner1!), .won)
     }
 
     func testDidAllPrisonersVisitAtLeastOnceNoVisits() {
