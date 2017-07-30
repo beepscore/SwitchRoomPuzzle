@@ -30,12 +30,14 @@ class Prisoner: NSObject {
     }
 
     /// This method may use prisoner state to calculate return value.
+    /// It may not use info directly from prisonController or from other prisoners.
     /// - Parameter roomSwitchUponEntering: switch state upon entering room
     /// - Returns: true if each prisoner has visited at least once
     /// (including current visit, before self possibly set switch),
     /// return false if each prisoner hasn't visited at least once or don't know.
     func didEachPrisonerVisitAtLeastOnce(roomSwitchUponEntering: Bool) -> Bool {
 
+        // TODO: improve implementation, e.g. handle cases with more than one prisoner
         return didVisitRoomAtLeastOnce
     }
 
