@@ -8,27 +8,7 @@ Solve switch room puzzle.
 # Results
 
 # Background
-
-## State each prisoner can store if needed
-
-### number of previous visits
-How many times have I gone to the switch room?
-odd/even
-
-### each visit
-switch value when I entered? on/off -> true/false
-switch value when I left? on/off -> true/false
-
-## Behavior
-given my state and the switch state, should I turn switch on, or off, or toggle it?
-
-## Approach
-start from base case and build. e.g. increase number of prisoners from 1 to 2 to 3...
-Could try different algorithms.
-
-## see unit tests
-
-## Appendix- puzzle statement
+## Background- Puzzle statement
 You are one of several recently arrested prisoners.
 The warden, a deranged computer scientist, makes the following announcement:
 
@@ -48,7 +28,60 @@ At any time, any of you may declare: "we have all visited the 'switch room' at l
 If the claim is correct, I will set you free. If the claim is incorrect, I will feed all of you to the crocodiles. Choose wisely!
 
 ### Devise a winning strategy when you know that the initial state of the switch is off.
-
 ### Devise a winning strategy when you do not know whether the initial state of the switch is on or off.
+
+## List ideas
+
+### Approaches
+Start solution from base case and build. e.g. increase number of prisoners from 1 to 2 to 3...
+Could try different algorithms.
+#### divide and conquer
+prisoners in groups with different behaviors, could reduce number of groups over time?
+#### no perfect solution??
+It's possible there isn't a guaranteed solution, maybe best is very high probability of success, but less than 1.
+
+### State each prisoner can store if needed
+#### from initial meeting
+##### total number of prisoners
+##### my prisoner number
+##### my switch algorithm (behavior)
+given my state and the switch state, should I turn switch on, or off, or toggle it?
+
+#### during the game
+##### previous visits
+How many times have I gone to the switch room?
+odd/even
+
+##### each visit
+switch value when I entered? on/off -> true/false
+switch value when I left? on/off -> true/false
+number of times I saw the light change state
+
+## Strategy when you know that the initial state of the switch is off.
+prisoners number themselves 0...n-1
+Every prisoner can implement a different behavior.
+//e.g. for prisoner number i, on first i visits, toggle switch state.
+//after that, don't toggle. could always set on.
+//or inverse
+//for first i visits, always set on, after that toggle.
+
+on first visit, toggle switch. After that don't change switch.
+if switch is not the way prisoner left it, a previously unvisited prisoner has visited.
+
+How can any prisoner know all of the other prisoners have visited?
+what if same prisoner is called twice in a row, other not called?
+
+on first visit, turn off.??
+on second visit, turn on.
+on later visits do nothing.
+
+could arbitrarily agree one or some "lead" prisoner, only they can declare.
+Maybe only they can turn on??
+lead could toggle, if they ever see light is same it means someone else changed it.
+
+
+## Strategy when you do not know whether the initial state of the switch is on or off.
+
+## see unit tests
 
 
