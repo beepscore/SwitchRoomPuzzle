@@ -28,7 +28,18 @@ class PrisonControllerTests: XCTestCase {
 
     func testVisitRoom() {
         let prisonController = PrisonController()
-        prisonController.prisoners.first?.visitRoom(prisonController.room)
+        XCTAssertEqual(prisonController.visitRoom(prisoner: prisonController.prisoners.first!),
+                       .won)
     }
 
+    func testDidAllPrisonersVisitAtLeastOnceNoVisits() {
+        let prisonController = PrisonController()
+        XCTAssertFalse(prisonController.didAllPrisonersVisitAtLeastOnce())
+    }
+
+    func testDidAllPrisonersVisitAtLeastOnceOneVisit() {
+        let prisonController = PrisonController()
+        let _ = prisonController.visitRoom(prisoner: prisonController.prisoners.first!)
+        XCTAssertTrue(prisonController.didAllPrisonersVisitAtLeastOnce())
+    }
 }

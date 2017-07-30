@@ -10,11 +10,20 @@ import Foundation
 
 class Prisoner: NSObject {
 
-    // TODO: State could store visits to the switch room
+    // TODO: could store all previous visits to the switch room
 
-    func visitRoom(_ room: Room) -> Bool {
+    var didVisitRoomAtLeastOnce = false
+
+    /// Method has side effects, may change state of prisoner and roomSwitch.
+    /// - Returns: true if each prisoner has visited at least once
+    /// (including current visit, before self possibly set roomSwitch),
+    /// return false if each prisoner hasn't visited at least once or don't know.
+    func visitRoomAndReport(_ room: Room) -> Bool {
+        
         let roomSwitchUponEntering = room.roomSwitch
         room.roomSwitch = shouldSetSwitch(roomSwitchUponEntering: roomSwitchUponEntering)
+
+        didVisitRoomAtLeastOnce = true
 
         // self might have set roomSwitch, so use roomSwitchUponEntering
         return didEachPrisonerVisitAtLeastOnce(roomSwitchUponEntering: roomSwitchUponEntering)
@@ -27,7 +36,7 @@ class Prisoner: NSObject {
     /// return false if each prisoner hasn't visited at least once or don't know.
     func didEachPrisonerVisitAtLeastOnce(roomSwitchUponEntering: Bool) -> Bool {
 
-        return true
+        return didVisitRoomAtLeastOnce
     }
 
     /// This method may recommend to turn switch on, or off, or toggle, or don't change.
