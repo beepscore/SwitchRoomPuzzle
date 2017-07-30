@@ -28,7 +28,7 @@ class PrisonController: NSObject {
         self.prisoners = prisoners
     }
 
-    /// - PrisonController uses this to check if a Prisoner "guess" is correct.
+    /// - PrisonController can use this to check if a Prisoner "guess" is correct.
     /// - Returns: true if each prisoner has visited at least once
     func didAllPrisonersVisitAtLeastOnce() -> Bool {
         guard let prisoners = prisoners else { return false }
