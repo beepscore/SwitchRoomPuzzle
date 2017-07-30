@@ -15,5 +15,10 @@ class PrisonerTests: XCTestCase {
         let prisoner = Prisoner()
         XCTAssertNotNil(prisoner)
     }
-    
+
+    func testVisitRoomAndReport() {
+        let prisoner = Prisoner()
+        XCTAssertTrue(prisoner.visitRoomAndReport(Room()))
+    }
+
 }
