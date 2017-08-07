@@ -28,6 +28,8 @@ class PrisonerTests: XCTestCase {
         let prisoner = Prisoner()
         XCTAssertFalse(prisoner.didAllPrisonersVisit)
         prisoner.visitRoom(Room())
+        
+        // TODO: delete or change this, it should not always pass!
         XCTAssertTrue(prisoner.didAllPrisonersVisit)
     }
 

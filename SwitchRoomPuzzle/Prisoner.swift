@@ -41,8 +41,8 @@ class Prisoner: NSObject {
     private func didEachPrisonerVisitAtLeastOnce(_ room: Room) -> Bool {
 
         // TODO: improve implementation, e.g. handle cases with more than one prisoner
-        return (!didVisitRoomAtLeastOnce && roomSwitchUponEntering)
-            || room.roomSwitch
+        return roomSwitchUponEntering
+            //|| !didVisitRoomAtLeastOnce
     }
 
     func leaveRoom(_ room: Room) {

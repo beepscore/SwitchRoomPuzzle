@@ -33,7 +33,7 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertEqual(prisonController.prisoners?.count, 1)
     }
 
-    // failed
+    // TODO: fix failed
     func testVisitRoomOnePrisoner() {
         let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
         let prisoner = prisonController.prisoners?.first
