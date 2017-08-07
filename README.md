@@ -69,6 +69,7 @@ on first visit, toggle switch. After that don't change switch.
 if switch is not the way prisoner left it, a previously unvisited prisoner has visited.
 
 How can any prisoner know all of the other prisoners have visited?
+How can any prisoner know if one or more prisoners have not visited?
 what if same prisoner is called twice in a row, other not called?
 
 on first visit, turn off.??
@@ -78,6 +79,34 @@ on later visits do nothing.
 could arbitrarily agree one or some "lead" prisoner, only they can declare.
 Maybe only they can turn on??
 lead could toggle, if they ever see light is same it means someone else changed it.
+
+---
+first visit
+if light is off, no one has reached second visit??
+don't change switch
+record light upon entering?
+record visit
+
+lead prisoner
+am i the one who turned the light on? if not, it was someone else's first visit.
+
+second visit,
+if light is off turn it on.
+if light is on don't do anything.
+record visit
+
+third visit
+if light is on don't do anything.
+
+if first visit, toggle switch
+store switchUponLeaving
+
+---
+first visit, toggle light
+set isFirstVisit false
+subsequent visit, don't change light
+if light is on and numprisoners is even???
+
 
 
 ## Strategy when you do not know whether the initial state of the switch is on or off.
