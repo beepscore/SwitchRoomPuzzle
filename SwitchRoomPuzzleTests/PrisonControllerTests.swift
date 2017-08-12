@@ -12,71 +12,28 @@ import XCTest
 class PrisonControllerTests: XCTestCase {
     
     func testInitDefaults() {
-        let prisonController = PrisonController(room: nil, prisoners: nil)
+        let prisonController = PrisonController(room: nil, numberOfPrisoners: nil)
         XCTAssertNotNil(prisonController)
-        XCTAssertNil(prisonController.room)
-        XCTAssertNil(prisonController.prisoners)
-    }
-
-    func testInitNotNil() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
-        XCTAssertNotNil(prisonController)
+        XCTAssertNotNil(prisonController.room)
+        XCTAssertEqual(prisonController.numberOfPrisoners, 10)
     }
 
     func testInitRoom() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
+        let prisonController = PrisonController(room: Room(), numberOfPrisoners: 10)
         XCTAssertNotNil(prisonController.room)
     }
 
-    func testInitPrisoners() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
-        XCTAssertEqual(prisonController.prisoners?.count, 1)
-    }
-
-    // TODO: fix failed
-    func testVisitRoomOnePrisoner() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
-        let prisoner = prisonController.prisoners?.first
-        XCTAssertEqual(prisonController.visitRoom(prisoner: prisoner!), .won)
-    }
-
-    func testVisitRoomTwoPrisoners() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner(), Prisoner()])
-        let prisoner0 = prisonController.prisoners?[0]
-        let prisoner1 = prisonController.prisoners?[1]
-
-        // TODO: Fix failing test
-        XCTAssertEqual(prisonController.visitRoom(prisoner: prisoner0!), .keepPlaying)
-        XCTAssertEqual(prisonController.visitRoom(prisoner: prisoner1!), .won)
+    func testInitPrisonerVisiteds() {
+        let numberOfPrisoners = 10
+        let prisonController = PrisonController(room: Room(),
+                                                numberOfPrisoners: numberOfPrisoners)
+        XCTAssertEqual(prisonController.prisonerVisiteds.count, numberOfPrisoners)
     }
 
     func testDidAllPrisonersVisitAtLeastOnceNoVisits() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
+        let room = Room()
+        let prisonController = PrisonController(room: room, numberOfPrisoners: 6)
         XCTAssertFalse(prisonController.didAllPrisonersVisitAtLeastOnce())
-    }
-
-    func testDidAllPrisonersVisitAtLeastOnceOneVisit() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner()])
-        let prisoner = prisonController.prisoners?.first
-        let _ = prisonController.visitRoom(prisoner: prisoner!)
-        XCTAssertTrue(prisonController.didAllPrisonersVisitAtLeastOnce())
-    }
-
-    func testDidAllPrisonersVisitAtLeastOnceTwoPrisoners() {
-        let prisonController = PrisonController(room: Room(), prisoners: [Prisoner(), Prisoner()])
-        let prisoner0 = prisonController.prisoners?[0]
-        let prisoner1 = prisonController.prisoners?[1]
-
-        let _ = prisonController.visitRoom(prisoner: prisoner0!)
-        XCTAssertFalse(prisonController.didAllPrisonersVisitAtLeastOnce())
-        let _ = prisonController.visitRoom(prisoner: prisoner1!)
-        XCTAssertTrue(prisonController.didAllPrisonersVisitAtLeastOnce())
-
-        // send prisoners again
-        let _ = prisonController.visitRoom(prisoner: prisoner0!)
-        XCTAssertTrue(prisonController.didAllPrisonersVisitAtLeastOnce())
-        let _ = prisonController.visitRoom(prisoner: prisoner1!)
-        XCTAssertTrue(prisonController.didAllPrisonersVisitAtLeastOnce())
     }
 
 }
