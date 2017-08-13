@@ -30,6 +30,12 @@ At any time, any of you may declare: "we have all visited the 'switch room' at l
 If the claim is correct, I will set you free. If the claim is incorrect, I will feed all of you to the crocodiles. Choose wisely!
 
 ## Devise a winning strategy when you know that the initial state of the switch is off.
+As shown in earlier commits, I got close to the solution without "peeking" at an answer.  
+I thought of a lead prisoner, several ways to store state, and several algorithms.  
+But I didn't think of a winning algorithm.  
+
+Then I peeked at answer http://www.cut-the-knot.org/Probability/LightBulbs.shtml
+Then I revised README, code and added tests.
 
 ### initial meeting
 Prisoners choose one of themselves to act as the leader.
