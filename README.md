@@ -43,15 +43,15 @@ Prisoners choose one of themselves to act as the leader.
 Leader counts total number of prisoners.
 
 #### regular prisoner (non-leader) behavior
-When I enter room, if light is off turn it on.
-When I enter room, if light is on leave it on.
+When I visit room, if light is off and I have never turned it on, turn it on.
+This sets a signal for lead prisoner to observe.
 switch on/off -> boolean true/false
 
 ##### lead prisoner behavior
-When I enter room, if light is on,
-    this means a "new" prisoner is signaling they entered the room
+When I visit room, if light is on,
+    this means a "new" prisoner has signalled they visited the room.
     Turn the light off.
-    increment number of times I turned light off.
+    Increment number of times I turned light off.
     If number of times I turned light off = total number of prisoners - 1, all prisoners have visited.
 
 ## TODO: Devise a winning strategy when you do not know whether the initial state of the switch is on or off.
