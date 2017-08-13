@@ -21,9 +21,9 @@ class LeadPrisonerTests: XCTestCase {
     func testDidLeadPrisonerVisit() {
         let room = Room()
         let leadPrisoner = LeadPrisoner(room: room, numberOfPrisoners: 1)
-        XCTAssertFalse(leadPrisoner.didLeadPrisonerVisit)
+        XCTAssertFalse(leadPrisoner.didVisit)
         leadPrisoner.visitRoom(room)
-        XCTAssertTrue(leadPrisoner.didLeadPrisonerVisit)
+        XCTAssertTrue(leadPrisoner.didVisit)
     }
 
     func testDidAllPrisonersVisitOnePrisoner() {

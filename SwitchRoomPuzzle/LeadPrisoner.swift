@@ -11,7 +11,7 @@ import UIKit
 class LeadPrisoner: PrisonerProtocol {
 
     var room: Room?
-    var didLeadPrisonerVisit = false
+    var didVisit = false
 
     var numberOfPrisoners = 0
     var numberOfTurnOffs = 0
@@ -31,7 +31,7 @@ class LeadPrisoner: PrisonerProtocol {
             numberOfTurnOffs += 1
         }
 
-        didLeadPrisonerVisit = true
+        didVisit = true
         if didAllPrisonersVisit() {
             room.didPrisonerSayAllHaveVisited = true
         }
@@ -39,7 +39,7 @@ class LeadPrisoner: PrisonerProtocol {
 
     func didAllPrisonersVisit() -> Bool {
         let numberOfRegularPrisoners = numberOfPrisoners - 1
-        return didLeadPrisonerVisit && (numberOfTurnOffs >= numberOfRegularPrisoners)
+        return didVisit && (numberOfTurnOffs >= numberOfRegularPrisoners)
     }
 
 }
