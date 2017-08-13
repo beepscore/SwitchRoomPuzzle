@@ -18,11 +18,21 @@ class LeadPrisonerTests: XCTestCase {
         XCTAssertNotNil(leadPrisoner)
     }
 
-    func testDidLeadPrisonerVisit() {
+    func testVisitRoom() {
         let room = Room()
-        let leadPrisoner = LeadPrisoner(room: room, numberOfPrisoners: 1)
+
+        // simulate non-lead prisoner turned switch on
+        room.roomSwitch = true
+
+        let leadPrisoner = LeadPrisoner(room: room, numberOfPrisoners: 2)
+        XCTAssertTrue(room.roomSwitch)
+        XCTAssertEqual(leadPrisoner.numberOfTurnOffs, 0)
         XCTAssertFalse(leadPrisoner.didVisit)
+
         leadPrisoner.visitRoom(room)
+
+        XCTAssertFalse(room.roomSwitch)
+        XCTAssertEqual(leadPrisoner.numberOfTurnOffs, 1)
         XCTAssertTrue(leadPrisoner.didVisit)
     }
 
