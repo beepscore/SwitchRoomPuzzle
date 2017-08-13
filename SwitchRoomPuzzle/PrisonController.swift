@@ -62,9 +62,14 @@ class PrisonController: NSObject {
     }
 
     /// returns true if prisoners got free
+    /// returns false if numberOfPrisoners is 0
     func managePrisoners() -> Bool {
 
         guard let room = room, let numberOfPrisoners = numberOfPrisoners else { return false }
+
+        if numberOfPrisoners == 0 {
+            return false
+        }
 
         // a random uniform distribution of integers from (0 - numberOfPrisoners - 1) inclusive
         // https://developer.apple.com/library/tvos/documentation/GameplayKit/Reference/GKShuffledDistribution_Class/index.html
