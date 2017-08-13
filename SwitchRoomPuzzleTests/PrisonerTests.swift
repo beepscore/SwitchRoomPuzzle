@@ -36,5 +36,5 @@ class PrisonerTests: XCTestCase {
         XCTAssertFalse(room.roomSwitch, "should not switch light on more than once")
         XCTAssertTrue(prisoner.didSwitchOn)
     }
-    
+
 }
