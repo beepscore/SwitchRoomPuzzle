@@ -74,4 +74,15 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertTrue(prisonController.managePrisoners())
     }
 
+    func testManagePrisonersNumberOfPrisoners2() {
+        let room = Room()
+        let prisonController = PrisonController(room: room, numberOfPrisoners: 2)
+        XCTAssertTrue(prisonController.managePrisoners())
+    }
+
+    func testManagePrisonersNumberOfPrisoners10() {
+        let room = Room()
+        let prisonController = PrisonController(room: room, numberOfPrisoners: 10)
+        XCTAssertTrue(prisonController.managePrisoners())
+    }
 }
