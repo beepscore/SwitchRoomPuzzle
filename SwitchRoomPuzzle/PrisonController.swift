@@ -86,6 +86,7 @@ class PrisonController: NSObject {
             prisonerVisiteds[prisonerIndex] = true
 
             if room.didPrisonerSayAllHaveVisited {
+                print(prisonerVisiteds)
                 if PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds: prisonerVisiteds) {
                     print("prisoner was correct, free all prisoners")
                     return true

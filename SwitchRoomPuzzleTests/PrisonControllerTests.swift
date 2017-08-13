@@ -93,6 +93,13 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertTrue(prisonController.managePrisoners())
     }
 
+    /// numberOfPrisoners 3 has a high chance to expose bug incorrect guess
+    func testManagePrisonersNumberOfPrisoners3() {
+        let room = Room()
+        let prisonController = PrisonController(room: room, numberOfPrisoners: 3)
+        XCTAssertTrue(prisonController.managePrisoners())
+    }
+
     func testManagePrisonersNumberOfPrisoners10() {
         let room = Room()
         let prisonController = PrisonController(room: room, numberOfPrisoners: 10)
