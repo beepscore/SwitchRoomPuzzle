@@ -3,7 +3,8 @@ Solve switch room puzzle.
 
 # References
 
-## http://www.skorks.com/2010/06/when-a-mount-fuji-question-is-not-really-a-mount-fuji-question-are-you-as-smart-as-you-think-you-are/
+## When A ‘Mount Fuji’ Question Is Not Really A ‘Mount Fuji’ Question
+http://www.skorks.com/2010/06/when-a-mount-fuji-question-is-not-really-a-mount-fuji-question-are-you-as-smart-as-you-think-you-are/
 
 ## spoiler - shows solution
 http://www.cut-the-knot.org/Probability/LightBulbs.shtml
