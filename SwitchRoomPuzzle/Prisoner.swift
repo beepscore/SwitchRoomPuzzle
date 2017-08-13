@@ -10,14 +10,17 @@ import Foundation
 
 class Prisoner: PrisonerProtocol {
 
+    // only "signal" to lead prisoner one time
+    var didSwitchOn = false
+
     /// Method has side effects, may change state of room.roomSwitch.
     func visitRoom(_ room: Room) {
 
-        if !room.roomSwitch {
+        if !didSwitchOn && !room.roomSwitch {
             // turn light on
             room.roomSwitch = true
+            didSwitchOn = true
         }
     }
-
     
 }
