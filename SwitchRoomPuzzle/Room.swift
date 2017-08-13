@@ -8,12 +8,12 @@
 
 import Foundation
 
-/// Room with switch corresponds directly to physical situation.
-/// probably could eliminate room object and just have a roomSwitch
-/// room.roomSwitch might be a little easier to enable any prisoner to set the switch.
+/// room is a convenient object to pass info between Prisoners, LeadPrisoner and PrisonController
 class Room: NSObject {
 
-    // switch in the room
+    /// switch in the room. corresponds directly to physical situation.
     var roomSwitch = false
+
+    var didPrisonerSayAllHaveVisited = false
     
 }

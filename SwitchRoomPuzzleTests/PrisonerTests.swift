@@ -16,9 +16,4 @@ class PrisonerTests: XCTestCase {
         XCTAssertNotNil(prisoner)
     }
 
-    func testDidAllPrisonersVisit() {
-        let prisoner = Prisoner()
-        XCTAssertFalse(prisoner.didAllPrisonersVisit())
-    }
-
 }

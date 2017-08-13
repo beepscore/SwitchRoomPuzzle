@@ -11,8 +11,7 @@ import UIKit
 class LeadPrisoner: PrisonerProtocol {
 
     var room: Room?
-    /// did lead prisoner visit
-    var didVisit = false
+    var didLeadPrisonerVisit = false
 
     var numberOfPrisoners = 0
     var numberOfTurnOffs = 0
@@ -23,21 +22,24 @@ class LeadPrisoner: PrisonerProtocol {
     }
 
 
-    /// Method has side effects, may change state of prisoner and room.roomSwitch.
-    func visitRoom(_ room: Room) -> Bool {
+    /// Method has side effects, may change state of prisoner,
+    /// room.roomSwitch, room.didPrisonerSayAllHaveVisited
+    func visitRoom(_ room: Room) {
 
         if room.roomSwitch {
             room.roomSwitch = false
             numberOfTurnOffs += 1
         }
 
-        didVisit = true
-        return didAllPrisonersVisit()
+        didLeadPrisonerVisit = true
+        if didAllPrisonersVisit() {
+            room.didPrisonerSayAllHaveVisited = true
+        }
     }
 
     func didAllPrisonersVisit() -> Bool {
         let numberOfRegularPrisoners = numberOfPrisoners - 1
-        return didVisit && (numberOfTurnOffs >= numberOfRegularPrisoners)
+        return didLeadPrisonerVisit && (numberOfTurnOffs >= numberOfRegularPrisoners)
     }
 
 }

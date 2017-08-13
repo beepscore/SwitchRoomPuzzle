@@ -9,7 +9,6 @@
 import Foundation
 
 protocol PrisonerProtocol {
-    /// returns true if all prisoners have visited room
-    func visitRoom(_ room: Room) -> Bool
+    func visitRoom(_ room: Room)
 }
 

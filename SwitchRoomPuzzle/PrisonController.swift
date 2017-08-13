@@ -61,10 +61,10 @@ class PrisonController: NSObject {
             let prisonerIndex = uniformDist.nextInt()
             print("prisonerIndex \(prisonerIndex)")
 
-            let prisonerSaidAllVisited = prisoners[prisonerIndex].visitRoom(room)
+            prisoners[prisonerIndex].visitRoom(room)
             prisonerVisiteds[prisonerIndex] = true
 
-            if prisonerSaidAllVisited {
+            if room.didPrisonerSayAllHaveVisited {
                 if didAllPrisonersVisitAtLeastOnce() {
                     print("prisoner was correct, free all prisoners")
                     return true
