@@ -23,7 +23,7 @@ class PrisonController: NSObject {
         self.room = room ?? Room()
         self.numberOfPrisoners = numberOfPrisoners ?? 10
         self.prisoners = populatedPrisoners(numberOfPrisoners: self.numberOfPrisoners!)
-        self.prisonerVisiteds = populatedPrisonersVisitedRoom(prisoners: self.prisoners)
+        self.prisonerVisiteds = PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners: self.numberOfPrisoners!)
     }
 
     func populatedPrisoners(numberOfPrisoners: Int) -> [PrisonerProtocol] {
@@ -40,8 +40,13 @@ class PrisonController: NSObject {
 
     /// - Parameter prisoners: used to map returned array
     /// - Returns: array with numberOfPrisoners elements, all elements false
-    func populatedPrisonersVisitedRoom(prisoners: [PrisonerProtocol]) -> [Bool] {
-        let visiteds = prisoners.map({ _ in false })
+    class func populatedPrisonersVisitedRoom(numberOfPrisoners: Int) -> [Bool] {
+
+        var visiteds = [Bool]()
+        
+        for _ in 0..<numberOfPrisoners {
+            visiteds.append(false)
+        }
         return visiteds
     }
 

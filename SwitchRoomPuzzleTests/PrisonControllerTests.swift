@@ -23,6 +23,16 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertNotNil(prisonController.room)
     }
 
+    func testPopulatedPrisonersVisitedRoom() {
+        XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:0), [])
+        XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:1),
+                       [false])
+        XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:2),
+                       [false, false])
+        XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:3),
+                       [false, false, false])
+    }
+    
     func testInitPrisonerVisiteds() {
         let numberOfPrisoners = 10
         let prisonController = PrisonController(room: Room(),
