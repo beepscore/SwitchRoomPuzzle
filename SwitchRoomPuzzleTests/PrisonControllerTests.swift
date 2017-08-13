@@ -60,10 +60,18 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertFalse(prisonController.didAllPrisonersVisitAtLeastOnce())
     }
 
-    func testManagePrisoners() {
+    // MARK: - testManagePrisoners
+
+    func testManagePrisonersNumberOfPrisoners0() {
         let room = Room()
         let prisonController = PrisonController(room: room, numberOfPrisoners: 0)
         XCTAssertFalse(prisonController.managePrisoners())
+    }
+
+    func testManagePrisonersNumberOfPrisoners1() {
+        let room = Room()
+        let prisonController = PrisonController(room: room, numberOfPrisoners: 1)
+        XCTAssertTrue(prisonController.managePrisoners())
     }
 
 }
