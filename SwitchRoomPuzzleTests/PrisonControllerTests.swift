@@ -23,8 +23,29 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertNotNil(prisonController.room)
     }
 
+    func testInitPrisonerVisiteds() {
+        let numberOfPrisoners = 10
+        let prisonController = PrisonController(room: Room(),
+                                                numberOfPrisoners: numberOfPrisoners)
+        XCTAssertEqual(prisonController.prisonerVisiteds.count, numberOfPrisoners)
+    }
+
+    func testPopulatedPrisoners() {
+        let room = Room()
+        var numberOfPrisoners = 0
+        XCTAssertEqual(PrisonController.populatedPrisoners(numberOfPrisoners: numberOfPrisoners, room: room).count,
+            numberOfPrisoners)
+        numberOfPrisoners = 1
+        XCTAssertEqual(PrisonController.populatedPrisoners(numberOfPrisoners: numberOfPrisoners, room: room).count,
+            numberOfPrisoners)
+        numberOfPrisoners = 2
+        XCTAssertEqual(PrisonController.populatedPrisoners(numberOfPrisoners: numberOfPrisoners, room: room).count,
+            numberOfPrisoners)
+    }
+
     func testPopulatedPrisonersVisitedRoom() {
-        XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:0), [])
+        XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:0),
+                       [])
         XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:1),
                        [false])
         XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:2),
@@ -33,13 +54,6 @@ class PrisonControllerTests: XCTestCase {
                        [false, false, false])
     }
     
-    func testInitPrisonerVisiteds() {
-        let numberOfPrisoners = 10
-        let prisonController = PrisonController(room: Room(),
-                                                numberOfPrisoners: numberOfPrisoners)
-        XCTAssertEqual(prisonController.prisonerVisiteds.count, numberOfPrisoners)
-    }
-
     func testDidAllPrisonersVisitAtLeastOnceNoVisits() {
         let room = Room()
         let prisonController = PrisonController(room: room, numberOfPrisoners: 6)

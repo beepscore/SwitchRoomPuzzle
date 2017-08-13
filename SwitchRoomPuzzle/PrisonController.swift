@@ -22,13 +22,23 @@ class PrisonController: NSObject {
         super.init()
         self.room = room ?? Room()
         self.numberOfPrisoners = numberOfPrisoners ?? 10
-        self.prisoners = populatedPrisoners(numberOfPrisoners: self.numberOfPrisoners!)
+        self.prisoners = PrisonController.populatedPrisoners(numberOfPrisoners: self.numberOfPrisoners!, room: self.room!)
         self.prisonerVisiteds = PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners: self.numberOfPrisoners!)
     }
 
-    func populatedPrisoners(numberOfPrisoners: Int) -> [PrisonerProtocol] {
+    /// - Parameters:
+    ///   - numberOfPrisoners: count for returned array
+    ///   - room: used to init a LeadPrisoner
+    /// - Returns: array of objects that conform to PrisonerProtocol.
+    ///   index 0 contains LeadPrisoner, any others are class Prisoner
+    class func populatedPrisoners(numberOfPrisoners: Int, room: Room) -> [PrisonerProtocol] {
 
         var prisoners = [PrisonerProtocol]()
+
+        if numberOfPrisoners == 0 {
+            return prisoners
+        }
+
         // prisoners[0] is leader
         prisoners.append(LeadPrisoner(room: room, numberOfPrisoners: numberOfPrisoners))
 
@@ -38,7 +48,8 @@ class PrisonController: NSObject {
         return prisoners
     }
 
-    /// - Parameter prisoners: used to map returned array
+    /// - Parameters:
+    ///   - prisoners: used to map returned array
     /// - Returns: array with numberOfPrisoners elements, all elements false
     class func populatedPrisonersVisitedRoom(numberOfPrisoners: Int) -> [Bool] {
 
