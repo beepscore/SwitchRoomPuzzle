@@ -10,7 +10,9 @@ import XCTest
 @testable import SwitchRoomPuzzle
 
 class PrisonControllerTests: XCTestCase {
-    
+
+    // MARK: - test init
+
     func testInitDefaults() {
         let prisonController = PrisonController(room: nil, numberOfPrisoners: nil)
         XCTAssertNotNil(prisonController)
@@ -30,6 +32,8 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertEqual(prisonController.prisonerVisiteds.count, numberOfPrisoners)
     }
 
+    // MARK: -
+    
     func testPopulatedPrisoners() {
         let room = Room()
         var numberOfPrisoners = 0
@@ -53,11 +57,20 @@ class PrisonControllerTests: XCTestCase {
         XCTAssertEqual(PrisonController.populatedPrisonersVisitedRoom(numberOfPrisoners:3),
                        [false, false, false])
     }
-    
-    func testDidAllPrisonersVisitAtLeastOnceNoVisits() {
-        let room = Room()
-        let prisonController = PrisonController(room: room, numberOfPrisoners: 6)
-        XCTAssertFalse(prisonController.didAllPrisonersVisitAtLeastOnce())
+
+    // MARK: - testDidAllPrisonersVisitAtLeastOnce
+
+    func testDidAllPrisonersVisitAtLeastOnceTrue() {
+        XCTAssertTrue(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[]))
+        XCTAssertTrue(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[true]))
+        XCTAssertTrue(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[true, true]))
+    }
+
+    func testDidAllPrisonersVisitAtLeastOnceFalse() {
+        XCTAssertFalse(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[false]))
+        XCTAssertFalse(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[false, false]))
+        XCTAssertFalse(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[false, true]))
+        XCTAssertFalse(PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds:[true, false]))
     }
 
     // MARK: - testManagePrisoners

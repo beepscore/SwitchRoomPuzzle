@@ -86,7 +86,7 @@ class PrisonController: NSObject {
             prisonerVisiteds[prisonerIndex] = true
 
             if room.didPrisonerSayAllHaveVisited {
-                if didAllPrisonersVisitAtLeastOnce() {
+                if PrisonController.didAllPrisonersVisitAtLeastOnce(prisonerVisiteds: prisonerVisiteds) {
                     print("prisoner was correct, free all prisoners")
                     return true
                 } else {
@@ -99,7 +99,8 @@ class PrisonController: NSObject {
 
     /// - PrisonController can use this to check if a Prisoner "guess" is correct.
     /// - Returns: true if each prisoner has visited at least once
-    func didAllPrisonersVisitAtLeastOnce() -> Bool {
+    ///   returns true if prisonerVisiteds is empty array (numberOfPrisoners is 0)
+    class func didAllPrisonersVisitAtLeastOnce(prisonerVisiteds: [Bool]) -> Bool {
         return prisonerVisiteds.filter({ $0 == false }) == []
     }
 
