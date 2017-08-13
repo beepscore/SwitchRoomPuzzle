@@ -53,6 +53,7 @@
 		DEDC55431F2D233D006A8F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDC55481F2D233D006A8F91 /* SwitchRoomPuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitchRoomPuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDC554E1F2D233D006A8F91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF87FF51F401625002D4910 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				DE6F8A821F2D241800D84542 /* README.md */,
+				DEF87FF51F401625002D4910 /* LICENSE */,
 				DEDC55361F2D233D006A8F91 /* SwitchRoomPuzzle */,
 				DEDC554B1F2D233D006A8F91 /* SwitchRoomPuzzleTests */,
 				DEDC55351F2D233D006A8F91 /* Products */,
