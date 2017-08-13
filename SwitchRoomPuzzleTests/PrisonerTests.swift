@@ -16,4 +16,25 @@ class PrisonerTests: XCTestCase {
         XCTAssertNotNil(prisoner)
     }
 
+    func testVisitRoom() {
+        let room = Room()
+        XCTAssertFalse(room.roomSwitch)
+
+        let prisoner = Prisoner()
+        XCTAssertFalse(prisoner.didSwitchOn)
+
+        prisoner.visitRoom(room)
+
+        XCTAssertTrue(room.roomSwitch)
+        XCTAssertTrue(prisoner.didSwitchOn)
+
+        // simulate lead prisoner visited room
+        room.roomSwitch = false
+
+        prisoner.visitRoom(room)
+
+        XCTAssertFalse(room.roomSwitch, "should not switch light on more than once")
+        XCTAssertTrue(prisoner.didSwitchOn)
+
+    }
 }
